@@ -13,7 +13,6 @@ namespace WebApplication1.Service
 
         Task Insert(UserReq userReq);
 
-
         Task UpadateAge(string email, int updateAge);
     }
 }
