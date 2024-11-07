@@ -10,7 +10,9 @@ namespace WebApplication1.Service
         Task<List<UserGroupRes>> GetGroup();
 
         Task<List<User>> GetUser(QueryUserReq user, int page);
+
         Task<string> GetUserNameWithMosic(string email);
+
         Task Insert(UserReq userReq);
 
         Task UpadateAge(string email, int updateAge);

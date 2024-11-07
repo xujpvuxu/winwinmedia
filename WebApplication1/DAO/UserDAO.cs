@@ -90,10 +90,11 @@ namespace WebApplication1.DAO
                 await Context.SaveChangesAsync();
             }
         }
+
         public async Task<User> GetUserNameWithMosic(string email)
         {
             User? model = await Context.User.FindAsync(email);
-            if (model is  null)
+            if (model is null)
             {
                 throw new Exception();
             }
