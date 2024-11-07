@@ -83,5 +83,11 @@ namespace WebApplication1.Controllers
         {
             await _userService.DeleteUser(email);
         }
+
+        [HttpGet("MosicName")]
+        public async Task<string> MosicName(string email)
+        {
+            return await _userService.GetUserNameWithMosic(email);
+        }
     }
 }

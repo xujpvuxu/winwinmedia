@@ -38,5 +38,22 @@ namespace WebApplication1.Service
         {
             await _userDAO.DeleteUser(email);
         }
+
+        public async Task<string> GetUserNameWithMosic(string email)
+        {
+            User model = await _userDAO.GetUserNameWithMosic(email);
+            return MosaicName(model.Name);
+        }
+
+        public string MosaicName(string sourceName)
+        {
+            if (string.IsNullOrEmpty(sourceName) || sourceName.Length < 2)
+            {
+                return sourceName;
+            }
+
+            // 將名字的第二個字替換成 *
+            return sourceName[0] + "*" + sourceName.Substring(2);
+        }
     }
 }

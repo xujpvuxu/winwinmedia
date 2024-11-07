@@ -10,7 +10,7 @@ namespace WebApplication1.DAO
         Task<List<UserGroupRes>> GetGroup();
 
         Task<List<User>> GetUser(QueryUserReq user, int page);
-
+        Task<User> GetUserNameWithMosic(string email);
         Task Insert(UserReq userReq);
 
         Task UpadateAge(string email, int updateAge);
