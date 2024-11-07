@@ -25,9 +25,18 @@ namespace WebApplication1.Service
         }
 
         public async Task<List<UserGroupRes>> GetGroup()
-        { 
+        {
             return await _userDAO.GetGroup();
-        
+        }
+
+        public async Task UpadateAge(string email, int updateAge)
+        {
+            await _userDAO.UpadateAge(email, updateAge);
+        }
+
+        public async Task DeleteUser(string email)
+        {
+            await _userDAO.DeleteUser(email);
         }
     }
 }

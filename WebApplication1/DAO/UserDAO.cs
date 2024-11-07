@@ -70,5 +70,25 @@ namespace WebApplication1.DAO
 
             return userSummary;
         }
+
+        public async Task UpadateAge(string email, int updateAge)
+        {
+            User? model = await Context.User.FindAsync(email);
+            if (model is not null)
+            {
+                model.Age = updateAge;
+                await Context.SaveChangesAsync();
+            }
+        }
+
+        public async Task DeleteUser(string email)
+        {
+            User? model = await Context.User.FindAsync(email);
+            if (model is not null)
+            {
+                Context.User.Remove(model);
+                await Context.SaveChangesAsync();
+            }
+        }
     }
 }

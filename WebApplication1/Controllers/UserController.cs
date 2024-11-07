@@ -60,5 +60,28 @@ namespace WebApplication1.Controllers
         {
             return await _userService.GetGroup();
         }
+
+        /// <summary>
+        /// 修改使用者資料
+        /// </summary>
+        /// <param name="email">信箱</param>
+        /// <param name="updateAge">修改後的年齡</param>
+        /// <returns></returns>
+        [HttpPut("")]
+        public async Task UpdateAge(string email, int updateAge)
+        {
+            await _userService.UpadateAge(email, updateAge);
+        }
+
+        /// <summary>
+        /// 刪除使用者
+        /// </summary>
+        /// <param name="email">信箱</param>
+        /// <returns></returns>
+        [HttpDelete("")]
+        public async Task DeleteUser(string email)
+        {
+            await _userService.DeleteUser(email);
+        }
     }
 }
