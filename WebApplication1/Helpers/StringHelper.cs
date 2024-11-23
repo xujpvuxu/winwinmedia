@@ -1,6 +1,8 @@
-﻿namespace WebApplication1.Helpers
+﻿using System.Text.RegularExpressions;
+
+namespace WebApplication1.Helpers
 {
-    public class StringHelper
+    public class StringHelper : IStringHelper
     {
         public string MosaicName(string sourceName)
         {
@@ -11,6 +13,10 @@
 
             // 將名字的第二個字替換成 *
             return $"{sourceName[0]}*{sourceName.Substring(2)}";
+        }
+        public bool IsEnglish(string text)
+        {
+            return Regex.IsMatch(text, "[a-zA-Z]");
         }
     }
 }
